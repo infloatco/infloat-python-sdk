@@ -16,8 +16,9 @@ from .types import (
     YoutubeTranscript,
 )
 from .errors import UnprocessableEntityError
-from . import auth, chatbot, crawler
+from . import auth, chatbot, ingestion, token
 from .client import AsyncInfloatApi, InfloatApi
+from .environment import InfloatApiEnvironment
 from .version import __version__
 
 __all__ = [
@@ -30,6 +31,7 @@ __all__ = [
     "FilePathResponse",
     "HttpValidationError",
     "InfloatApi",
+    "InfloatApiEnvironment",
     "Token",
     "UnprocessableEntityError",
     "UserResponse",
@@ -40,5 +42,6 @@ __all__ = [
     "__version__",
     "auth",
     "chatbot",
-    "crawler",
+    "ingestion",
+    "token",
 ]

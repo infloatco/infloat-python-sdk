@@ -24,7 +24,6 @@ from Infloat import InfloatApi
 
 client = InfloatApi(
     token="YOUR_TOKEN",
-    base_url="https://yourhost.com/path/to/api",
 )
 client.auth.login(
     email="email",
@@ -43,7 +42,6 @@ from Infloat import AsyncInfloatApi
 
 client = AsyncInfloatApi(
     token="YOUR_TOKEN",
-    base_url="https://yourhost.com/path/to/api",
 )
 
 

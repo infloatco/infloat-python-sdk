@@ -18,7 +18,7 @@ from ..core.client_wrapper import AsyncClientWrapper
 OMIT = typing.cast(typing.Any, ...)
 
 
-class CrawlerClient:
+class IngestionClient:
     def __init__(self, *, client_wrapper: SyncClientWrapper):
         self._client_wrapper = client_wrapper
 
@@ -31,7 +31,7 @@ class CrawlerClient:
         request_options: typing.Optional[RequestOptions] = None,
     ) -> WebsiteIngestionResponse:
         """
-        Start a website crawl.
+        Ingest a website
 
         Parameters
         ----------
@@ -56,15 +56,14 @@ class CrawlerClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
-        client.crawler.crawl_website(
+        client.ingestion.crawl_website(
             url="url",
             chatbot_id="chatbot_id",
         )
         """
         _response = self._client_wrapper.httpx_client.request(
-            "api/v1/ingest/website/",
+            "api/v1/ingest/website",
             method="POST",
             json={
                 "url": url,
@@ -105,6 +104,8 @@ class CrawlerClient:
         self, *, url: str, chatbot_id: str, request_options: typing.Optional[RequestOptions] = None
     ) -> YoutubeTranscript:
         """
+        Ingest a YouTube video
+
         Parameters
         ----------
         url : str
@@ -125,15 +126,14 @@ class CrawlerClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
-        client.crawler.ingest_youtube(
+        client.ingestion.ingest_youtube(
             url="url",
             chatbot_id="chatbot_id",
         )
         """
         _response = self._client_wrapper.httpx_client.request(
-            "api/v1/ingest/youtube/",
+            "api/v1/ingest/youtube",
             method="POST",
             json={
                 "url": url,
@@ -170,6 +170,8 @@ class CrawlerClient:
         self, *, file: core.File, chatbot_id: str, request_options: typing.Optional[RequestOptions] = None
     ) -> FilePathResponse:
         """
+        Upload a document
+
         Parameters
         ----------
         file : core.File
@@ -191,14 +193,13 @@ class CrawlerClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
-        client.crawler.upload_document(
+        client.ingestion.upload_document(
             chatbot_id="chatbot_id",
         )
         """
         _response = self._client_wrapper.httpx_client.request(
-            "api/v1/ingest/document/",
+            "api/v1/ingest/document",
             method="POST",
             data={
                 "chatbot_id": chatbot_id,
@@ -234,7 +235,7 @@ class CrawlerClient:
         raise ApiError(status_code=_response.status_code, body=_response_json)
 
 
-class AsyncCrawlerClient:
+class AsyncIngestionClient:
     def __init__(self, *, client_wrapper: AsyncClientWrapper):
         self._client_wrapper = client_wrapper
 
@@ -247,7 +248,7 @@ class AsyncCrawlerClient:
         request_options: typing.Optional[RequestOptions] = None,
     ) -> WebsiteIngestionResponse:
         """
-        Start a website crawl.
+        Ingest a website
 
         Parameters
         ----------
@@ -274,12 +275,11 @@ class AsyncCrawlerClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
         async def main() -> None:
-            await client.crawler.crawl_website(
+            await client.ingestion.crawl_website(
                 url="url",
                 chatbot_id="chatbot_id",
             )
@@ -288,7 +288,7 @@ class AsyncCrawlerClient:
         asyncio.run(main())
         """
         _response = await self._client_wrapper.httpx_client.request(
-            "api/v1/ingest/website/",
+            "api/v1/ingest/website",
             method="POST",
             json={
                 "url": url,
@@ -329,6 +329,8 @@ class AsyncCrawlerClient:
         self, *, url: str, chatbot_id: str, request_options: typing.Optional[RequestOptions] = None
     ) -> YoutubeTranscript:
         """
+        Ingest a YouTube video
+
         Parameters
         ----------
         url : str
@@ -351,12 +353,11 @@ class AsyncCrawlerClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
         async def main() -> None:
-            await client.crawler.ingest_youtube(
+            await client.ingestion.ingest_youtube(
                 url="url",
                 chatbot_id="chatbot_id",
             )
@@ -365,7 +366,7 @@ class AsyncCrawlerClient:
         asyncio.run(main())
         """
         _response = await self._client_wrapper.httpx_client.request(
-            "api/v1/ingest/youtube/",
+            "api/v1/ingest/youtube",
             method="POST",
             json={
                 "url": url,
@@ -402,6 +403,8 @@ class AsyncCrawlerClient:
         self, *, file: core.File, chatbot_id: str, request_options: typing.Optional[RequestOptions] = None
     ) -> FilePathResponse:
         """
+        Upload a document
+
         Parameters
         ----------
         file : core.File
@@ -425,12 +428,11 @@ class AsyncCrawlerClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
         async def main() -> None:
-            await client.crawler.upload_document(
+            await client.ingestion.upload_document(
                 chatbot_id="chatbot_id",
             )
 
@@ -438,7 +440,7 @@ class AsyncCrawlerClient:
         asyncio.run(main())
         """
         _response = await self._client_wrapper.httpx_client.request(
-            "api/v1/ingest/document/",
+            "api/v1/ingest/document",
             method="POST",
             data={
                 "chatbot_id": chatbot_id,

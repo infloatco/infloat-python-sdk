@@ -29,6 +29,8 @@ class AuthClient:
         request_options: typing.Optional[RequestOptions] = None,
     ) -> Token:
         """
+        Login a user with email and password or OAuth provider.
+
         Parameters
         ----------
         email : str
@@ -51,7 +53,6 @@ class AuthClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.auth.login(
             email="email",
@@ -100,6 +101,8 @@ class AuthClient:
 
     def auth_callback(self, *, request_options: typing.Optional[RequestOptions] = None) -> typing.Optional[typing.Any]:
         """
+        OAuth callback for Google login.
+
         Parameters
         ----------
         request_options : typing.Optional[RequestOptions]
@@ -116,7 +119,6 @@ class AuthClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.auth.auth_callback()
         """
@@ -143,6 +145,8 @@ class AuthClient:
         self, *, username: str, email: str, password: str, request_options: typing.Optional[RequestOptions] = None
     ) -> UserResponse:
         """
+        Register a new user.
+
         Parameters
         ----------
         username : str
@@ -165,7 +169,6 @@ class AuthClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.auth.register_user(
             username="username",
@@ -213,6 +216,8 @@ class AuthClient:
 
     def delete_user(self, *, request_options: typing.Optional[RequestOptions] = None) -> None:
         """
+        Delete the current user.
+
         Parameters
         ----------
         request_options : typing.Optional[RequestOptions]
@@ -228,7 +233,6 @@ class AuthClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.auth.delete_user()
         """
@@ -247,6 +251,8 @@ class AuthClient:
 
     def logout(self, *, request_options: typing.Optional[RequestOptions] = None) -> None:
         """
+        Logout the current user.
+
         Parameters
         ----------
         request_options : typing.Optional[RequestOptions]
@@ -262,7 +268,6 @@ class AuthClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.auth.logout()
         """
@@ -293,6 +298,8 @@ class AsyncAuthClient:
         request_options: typing.Optional[RequestOptions] = None,
     ) -> Token:
         """
+        Login a user with email and password or OAuth provider.
+
         Parameters
         ----------
         email : str
@@ -317,7 +324,6 @@ class AsyncAuthClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -374,6 +380,8 @@ class AsyncAuthClient:
         self, *, request_options: typing.Optional[RequestOptions] = None
     ) -> typing.Optional[typing.Any]:
         """
+        OAuth callback for Google login.
+
         Parameters
         ----------
         request_options : typing.Optional[RequestOptions]
@@ -392,7 +400,6 @@ class AsyncAuthClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -425,6 +432,8 @@ class AsyncAuthClient:
         self, *, username: str, email: str, password: str, request_options: typing.Optional[RequestOptions] = None
     ) -> UserResponse:
         """
+        Register a new user.
+
         Parameters
         ----------
         username : str
@@ -449,7 +458,6 @@ class AsyncAuthClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -503,6 +511,8 @@ class AsyncAuthClient:
 
     async def delete_user(self, *, request_options: typing.Optional[RequestOptions] = None) -> None:
         """
+        Delete the current user.
+
         Parameters
         ----------
         request_options : typing.Optional[RequestOptions]
@@ -520,7 +530,6 @@ class AsyncAuthClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -545,6 +554,8 @@ class AsyncAuthClient:
 
     async def logout(self, *, request_options: typing.Optional[RequestOptions] = None) -> None:
         """
+        Logout the current user.
+
         Parameters
         ----------
         request_options : typing.Optional[RequestOptions]
@@ -562,7 +573,6 @@ class AsyncAuthClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 

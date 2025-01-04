@@ -21,7 +21,7 @@ class ChatbotClient:
         self._client_wrapper = client_wrapper
 
     def chatbot(
-        self, *, unique_code: str, request_options: typing.Optional[RequestOptions] = None
+        self, *, unique_code: str, query: str, request_options: typing.Optional[RequestOptions] = None
     ) -> typing.Optional[typing.Any]:
         """
         Check if the current user has access to the chatbot.
@@ -29,6 +29,8 @@ class ChatbotClient:
         Parameters
         ----------
         unique_code : str
+
+        query : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -44,10 +46,10 @@ class ChatbotClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.chatbot.chatbot(
             unique_code="unique_code",
+            query="query",
         )
         """
         _response = self._client_wrapper.httpx_client.request(
@@ -55,6 +57,7 @@ class ChatbotClient:
             method="GET",
             params={
                 "unique_code": unique_code,
+                "query": query,
             },
             request_options=request_options,
         )
@@ -104,12 +107,11 @@ class ChatbotClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.chatbot.get_all_user_chatbots()
         """
         _response = self._client_wrapper.httpx_client.request(
-            "api/v1/chatbot/",
+            "api/v1/chatbot",
             method="GET",
             request_options=request_options,
         )
@@ -151,14 +153,13 @@ class ChatbotClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.chatbot.create_chatbot(
             chatbot_name="chatbot_name",
         )
         """
         _response = self._client_wrapper.httpx_client.request(
-            "api/v1/chatbot/",
+            "api/v1/chatbot",
             method="POST",
             json={
                 "chatbot_name": chatbot_name,
@@ -194,8 +195,7 @@ class ChatbotClient:
         self, chatbot_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> typing.List[ChatbotResponse]:
         """
-        Fetch chatbots with optional filters:
-        - `id`: Fetch a specific chatbot by its ID.
+        Fetch chatbots with optional filters.
 
         Parameters
         ----------
@@ -215,7 +215,6 @@ class ChatbotClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.chatbot.get_chatbots(
             chatbot_id="chatbot_id",
@@ -276,7 +275,6 @@ class ChatbotClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.chatbot.update_chatbot(
             chatbot_id="chatbot_id",
@@ -337,7 +335,6 @@ class ChatbotClient:
 
         client = InfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
         client.chatbot.delete_chatbot(
             chatbot_id="chatbot_id",
@@ -372,7 +369,7 @@ class AsyncChatbotClient:
         self._client_wrapper = client_wrapper
 
     async def chatbot(
-        self, *, unique_code: str, request_options: typing.Optional[RequestOptions] = None
+        self, *, unique_code: str, query: str, request_options: typing.Optional[RequestOptions] = None
     ) -> typing.Optional[typing.Any]:
         """
         Check if the current user has access to the chatbot.
@@ -380,6 +377,8 @@ class AsyncChatbotClient:
         Parameters
         ----------
         unique_code : str
+
+        query : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -397,13 +396,13 @@ class AsyncChatbotClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
         async def main() -> None:
             await client.chatbot.chatbot(
                 unique_code="unique_code",
+                query="query",
             )
 
 
@@ -414,6 +413,7 @@ class AsyncChatbotClient:
             method="GET",
             params={
                 "unique_code": unique_code,
+                "query": query,
             },
             request_options=request_options,
         )
@@ -465,7 +465,6 @@ class AsyncChatbotClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -476,7 +475,7 @@ class AsyncChatbotClient:
         asyncio.run(main())
         """
         _response = await self._client_wrapper.httpx_client.request(
-            "api/v1/chatbot/",
+            "api/v1/chatbot",
             method="GET",
             request_options=request_options,
         )
@@ -520,7 +519,6 @@ class AsyncChatbotClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -533,7 +531,7 @@ class AsyncChatbotClient:
         asyncio.run(main())
         """
         _response = await self._client_wrapper.httpx_client.request(
-            "api/v1/chatbot/",
+            "api/v1/chatbot",
             method="POST",
             json={
                 "chatbot_name": chatbot_name,
@@ -569,8 +567,7 @@ class AsyncChatbotClient:
         self, chatbot_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> typing.List[ChatbotResponse]:
         """
-        Fetch chatbots with optional filters:
-        - `id`: Fetch a specific chatbot by its ID.
+        Fetch chatbots with optional filters.
 
         Parameters
         ----------
@@ -592,7 +589,6 @@ class AsyncChatbotClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -661,7 +657,6 @@ class AsyncChatbotClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
@@ -730,7 +725,6 @@ class AsyncChatbotClient:
 
         client = AsyncInfloatApi(
             token="YOUR_TOKEN",
-            base_url="https://yourhost.com/path/to/api",
         )
 
 
