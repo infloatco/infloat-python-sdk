@@ -8,7 +8,6 @@ import pydantic
 
 class Token(UniversalBaseModel):
     access_token: str
-    refresh_token: str
     token_type: str
 
     if IS_PYDANTIC_V2:

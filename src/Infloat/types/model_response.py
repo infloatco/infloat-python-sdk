@@ -7,13 +7,13 @@ from ..core.pydantic_utilities import IS_PYDANTIC_V2
 import pydantic
 
 
-class DocumentResponse(UniversalBaseModel):
+class ModelResponse(UniversalBaseModel):
     id: str
-    chatbot_id: str
+    filename: str
     url: typing.Optional[str] = None
-    file_path: str
-    file_type: str
-    uploaded_at: typing.Optional[dt.datetime] = None
+    model_type: typing.Optional[str] = None
+    version: typing.Optional[str] = None
+    created_at: dt.datetime
 
     if IS_PYDANTIC_V2:
         model_config: typing.ClassVar[pydantic.ConfigDict] = pydantic.ConfigDict(extra="allow", frozen=True)  # type: ignore # Pydantic v2

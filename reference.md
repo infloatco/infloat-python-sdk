@@ -1,22 +1,7 @@
 # Reference
-## auth
-<details><summary><code>client.auth.<a href="src/Infloat/auth/client.py">login</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">register_user_auth_register_post</a>(...)</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Login a user with email and password or OAuth provider.
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -30,9 +15,10 @@ Login a user with email and password or OAuth provider.
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.auth.login(
+client.register_user_auth_register_post(
+    name="name",
     email="email",
     password="password",
 )
@@ -51,155 +37,7 @@ client.auth.login(
 <dl>
 <dd>
 
-**email:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**password:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**provider:** `typing.Optional[str]` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.auth.<a href="src/Infloat/auth/client.py">auth_callback</a>()</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-OAuth callback for Google login.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.auth.auth_callback()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.auth.<a href="src/Infloat/auth/client.py">register_user</a>(...)</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Register a new user.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.auth.register_user(
-    username="username",
-    email="email",
-    password="password",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**username:** `str` 
+**name:** `str` 
     
 </dd>
 </dl>
@@ -235,23 +73,9 @@ client.auth.register_user(
 </dl>
 </details>
 
-<details><summary><code>client.auth.<a href="src/Infloat/auth/client.py">delete_user</a>()</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">login_auth_login_post</a>(...)</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Delete the current user.
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -265,132 +89,11 @@ Delete the current user.
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.auth.delete_user()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.auth.<a href="src/Infloat/auth/client.py">logout</a>()</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Logout the current user.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.auth.logout()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-## ingestion
-<details><summary><code>client.ingestion.<a href="src/Infloat/ingestion/client.py">crawl_website</a>(...)</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Ingest a website
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.ingestion.crawl_website(
-    url="url",
-    chatbot_id="chatbot_id",
+client.login_auth_login_post(
+    email="email",
+    password="password",
 )
 
 ```
@@ -407,7 +110,7 @@ client.ingestion.crawl_website(
 <dl>
 <dd>
 
-**url:** `str` 
+**email:** `str` 
     
 </dd>
 </dl>
@@ -415,15 +118,7 @@ client.ingestion.crawl_website(
 <dl>
 <dd>
 
-**chatbot_id:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**max_depth:** `typing.Optional[int]` — Maximum crawl depth
+**password:** `str` 
     
 </dd>
 </dl>
@@ -443,23 +138,9 @@ client.ingestion.crawl_website(
 </dl>
 </details>
 
-<details><summary><code>client.ingestion.<a href="src/Infloat/ingestion/client.py">ingest_youtube</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">get_user_me_auth_me_get</a>(...)</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Ingest a YouTube video
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -473,12 +154,9 @@ Ingest a YouTube video
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.ingestion.ingest_youtube(
-    url="url",
-    chatbot_id="chatbot_id",
-)
+client.get_user_me_auth_me_get()
 
 ```
 </dd>
@@ -494,15 +172,7 @@ client.ingestion.ingest_youtube(
 <dl>
 <dd>
 
-**url:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**chatbot_id:** `str` 
+**authorization:** `typing.Optional[str]` 
     
 </dd>
 </dl>
@@ -522,23 +192,9 @@ client.ingestion.ingest_youtube(
 </dl>
 </details>
 
-<details><summary><code>client.ingestion.<a href="src/Infloat/ingestion/client.py">upload_document</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">get_projects_projects_get</a>(...)</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Upload a document
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -552,11 +208,9 @@ Upload a document
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.ingestion.upload_document(
-    chatbot_id="chatbot_id",
-)
+client.get_projects_projects_get()
 
 ```
 </dd>
@@ -572,9 +226,7 @@ client.ingestion.upload_document(
 <dl>
 <dd>
 
-**file:** `from __future__ import annotations
-
-core.File` — See core.File for more documentation
+**skip:** `typing.Optional[int]` 
     
 </dd>
 </dl>
@@ -582,7 +234,15 @@ core.File` — See core.File for more documentation
 <dl>
 <dd>
 
-**chatbot_id:** `str` 
+**limit:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
     
 </dd>
 </dl>
@@ -602,24 +262,9 @@ core.File` — See core.File for more documentation
 </dl>
 </details>
 
-## chatbot
-<details><summary><code>client.chatbot.<a href="src/Infloat/chatbot/client.py">chatbot</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">create_project_projects_post</a>(...)</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Check if the current user has access to the chatbot.
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -633,289 +278,9 @@ Check if the current user has access to the chatbot.
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.chatbot.chatbot(
-    unique_code="unique_code",
-    query="query",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**unique_code:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**query:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.chatbot.<a href="src/Infloat/chatbot/client.py">get_all_user_chatbots</a>()</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Get all chatbots belonging to the current user.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.chatbot.get_all_user_chatbots()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.chatbot.<a href="src/Infloat/chatbot/client.py">create_chatbot</a>(...)</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Create a new chatbot for the current user.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.chatbot.create_chatbot(
-    chatbot_name="chatbot_name",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**chatbot_name:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.chatbot.<a href="src/Infloat/chatbot/client.py">get_chatbots</a>(...)</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Fetch chatbots with optional filters.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.chatbot.get_chatbots(
-    chatbot_id="chatbot_id",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**chatbot_id:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.chatbot.<a href="src/Infloat/chatbot/client.py">update_chatbot</a>(...)</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Update a specific chatbot.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from Infloat import InfloatApi
-
-client = InfloatApi(
-    token="YOUR_TOKEN",
-)
-client.chatbot.update_chatbot(
-    chatbot_id="chatbot_id",
+client.create_project_projects_post(
     name="name",
 )
 
@@ -933,14 +298,6 @@ client.chatbot.update_chatbot(
 <dl>
 <dd>
 
-**chatbot_id:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
 **name:** `str` 
     
 </dd>
@@ -949,6 +306,30 @@ client.chatbot.update_chatbot(
 <dl>
 <dd>
 
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**description:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**is_public:** `typing.Optional[bool]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
 **request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
     
 </dd>
@@ -961,23 +342,9 @@ client.chatbot.update_chatbot(
 </dl>
 </details>
 
-<details><summary><code>client.chatbot.<a href="src/Infloat/chatbot/client.py">delete_chatbot</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">get_project_projects_project_id_get</a>(...)</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Delete a specific chatbot.
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -991,10 +358,10 @@ Delete a specific chatbot.
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.chatbot.delete_chatbot(
-    chatbot_id="chatbot_id",
+client.get_project_projects_project_id_get(
+    project_id="project_id",
 )
 
 ```
@@ -1011,7 +378,15 @@ client.chatbot.delete_chatbot(
 <dl>
 <dd>
 
-**chatbot_id:** `str` 
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
     
 </dd>
 </dl>
@@ -1031,8 +406,7 @@ client.chatbot.delete_chatbot(
 </dl>
 </details>
 
-## Token
-<details><summary><code>client.token.<a href="src/Infloat/token/client.py">verify_email</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">get_models_projects_project_id_models_get</a>(...)</code></summary>
 <dl>
 <dd>
 
@@ -1048,10 +422,10 @@ client.chatbot.delete_chatbot(
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.token.verify_email(
-    token="token",
+client.get_models_projects_project_id_models_get(
+    project_id="project_id",
 )
 
 ```
@@ -1068,7 +442,15 @@ client.token.verify_email(
 <dl>
 <dd>
 
-**token:** `str` 
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
     
 </dd>
 </dl>
@@ -1088,7 +470,7 @@ client.token.verify_email(
 </dl>
 </details>
 
-<details><summary><code>client.token.<a href="src/Infloat/token/client.py">resend_verification</a>()</code></summary>
+<details><summary><code>client.<a href="src/Infloat/client.py">upload_model_projects_project_id_models_post</a>(...)</code></summary>
 <dl>
 <dd>
 
@@ -1104,9 +486,735 @@ client.token.verify_email(
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.token.resend_verification()
+client.upload_model_projects_project_id_models_post(
+    project_id="project_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**file:** `from __future__ import annotations
+
+core.File` — See core.File for more documentation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**model_type:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**version:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">get_clients_projects_project_id_clients_get</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.get_clients_projects_project_id_clients_get(
+    project_id="project_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">register_client_projects_project_id_clients_post</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.register_client_projects_project_id_clients_post(
+    project_id="project_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**name:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">get_client_config_client_config_get</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.get_client_config_client_config_get()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**api_key:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">get_trainings_projects_project_id_trainings_get</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.get_trainings_projects_project_id_trainings_get(
+    project_id="project_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**skip:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**limit:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">start_training_projects_project_id_trainings_post</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.start_training_projects_project_id_trainings_post(
+    project_id="project_id",
+    model_id="model_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**project_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**model_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**target_rounds:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**min_clients:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**max_clients:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**aggregation_strategy:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**config:** `typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">get_training_status_trainings_training_id_get</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.get_training_status_trainings_training_id_get(
+    training_id="training_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**training_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">get_training_results_trainings_training_id_results_get</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.get_training_results_trainings_training_id_results_get(
+    training_id="training_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**training_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**round_num:** `typing.Optional[int]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">submit_metrics_client_submit_metrics_post</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.submit_metrics_client_submit_metrics_post(
+    client_id="client_id",
+    round=1,
+    loss=1.1,
+    accuracy=1.1,
+    training_samples=1,
+    training_time=1.1,
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**client_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**round:** `int` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**loss:** `float` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**accuracy:** `float` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**training_samples:** `int` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**training_time:** `float` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**api_key:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**additional_metrics:** `typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="src/Infloat/client.py">health_check_health_get</a>()</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from Infloat import InfloatApi
+
+client = InfloatApi(
+    base_url="https://yourhost.com/path/to/api",
+)
+client.health_check_health_get()
 
 ```
 </dd>

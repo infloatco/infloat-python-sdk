@@ -23,9 +23,10 @@ Instantiate and use the client with the following:
 from Infloat import InfloatApi
 
 client = InfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
-client.auth.login(
+client.register_user_auth_register_post(
+    name="name",
     email="email",
     password="password",
 )
@@ -41,12 +42,13 @@ import asyncio
 from Infloat import AsyncInfloatApi
 
 client = AsyncInfloatApi(
-    token="YOUR_TOKEN",
+    base_url="https://yourhost.com/path/to/api",
 )
 
 
 async def main() -> None:
-    await client.auth.login(
+    await client.register_user_auth_register_post(
+        name="name",
         email="email",
         password="password",
     )
@@ -64,7 +66,7 @@ will be thrown.
 from Infloat.core.api_error import ApiError
 
 try:
-    client.auth.login(...)
+    client.register_user_auth_register_post(...)
 except ApiError as e:
     print(e.status_code)
     print(e.body)
@@ -87,7 +89,7 @@ A request is deemed retriable when any of the following HTTP status codes is ret
 Use the `max_retries` request option to configure this behavior.
 
 ```python
-client.auth.login(..., request_options={
+client.register_user_auth_register_post(..., request_options={
     "max_retries": 1
 })
 ```
@@ -107,7 +109,7 @@ client = InfloatApi(
 
 
 # Override timeout for a specific method
-client.auth.login(..., request_options={
+client.register_user_auth_register_post(..., request_options={
     "timeout_in_seconds": 1
 })
 ```
